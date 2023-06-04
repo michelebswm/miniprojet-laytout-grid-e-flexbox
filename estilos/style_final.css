@@ -5,18 +5,10 @@
 	font-size: 20px;
 }
 
-a {
-	text-decoration: none;
-}
-
 .container {
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
-}
-
-.logoNavBar {
-	width: 150px;
 }
 
 .header {
@@ -28,7 +20,11 @@ a {
 	align-items: center;
 	flex-wrap: wrap;
 	padding: 30px;
-	gap: 8px 15px;
+	gap: 8px 15px; /*8px vertical e 15px horizontal*/
+}
+
+.logoNavBar {
+	width: 180px;
 }
 
 .headerBtnGroup {
@@ -70,10 +66,12 @@ a {
 	flex: 1 0 auto;
 }
 
-.mainCardImg {
-	width: 100%;
-	height: 180px;
-	border-radius: 10px;
+.mainContent {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	grid-area: mainContent;
 }
 
 .categoryCard {
@@ -85,12 +83,10 @@ a {
 	cursor: pointer;
 }
 
-.mainContent {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
-	grid-area: mainContent;
+.mainCardImg {
+	width: 100%;
+	height: 180px;
+	border-radius: 10px;
 }
 
 .categoryCard:hover {
@@ -118,11 +114,6 @@ a {
 	grid-area: sidebarContent;
 }
 
-.sidebarCardImg {
-	width: 100%;
-	border-radius: 10px;
-}
-
 .sidebarCard {
 	width: 75%;
 	border: 1px solid transparent;
@@ -131,14 +122,19 @@ a {
 	transition: 0.5s;
 }
 
-.sidebarCard:hover {
-	border-color: gainsboro;
+.sidebarCardImg {
+	width: 100%;
+	border-radius: 10px;
 }
 
 .sidebarCardTitle {
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
 	padding: 10px;
+}
+
+.sidebarCard:hover {
+	border-color: gainsboro;
 }
 
 .footer {
@@ -154,7 +150,7 @@ a {
 }
 
 .logoFooter {
-	width: 100px;
+	width: 180px;
 }
 
 .footerAnchor {
@@ -164,13 +160,19 @@ a {
 
 @media (max-width: 630px) {
 	.gridContainer {
-		grid-template-areas: "mainContent sidebarContent";
+		grid-template-areas:
+			"mainContent"
+			"sidebarContent";
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 10px;
 	}
 	.sidebarContent {
 		min-width: auto;
+	}
+	.footerAnchor {
+		font-size: 19px;
 	}
 }
 
